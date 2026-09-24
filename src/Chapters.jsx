@@ -384,6 +384,7 @@ const Chapter6 = ({ onNext }) => {
 const FinalSurprise = () => {
   const [step, setStep] = useState(0);
   const [showLetter, setShowLetter] = useState(false);
+  const [showCollage, setShowCollage] = useState(false);
 
   useEffect(() => {
     const t1 = setTimeout(() => setStep(1), 2000);
@@ -446,14 +447,11 @@ const FinalSurprise = () => {
 
             <div style={{ marginTop: '3rem', textAlign: 'center' }}>
               <p className="serif" style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Ready for your real birthday surprise?</p>
-              <button className="cinematic-btn" onClick={() => alert("Sparkles and fireworks! Now come find me.")}>YES ❤️</button>
+              <button className="cinematic-btn" onClick={() => setShowCollage(true)}>YES ❤️</button>
             </div>
           </motion.div>
         )}
-      </div>
-
-      <AnimatePresence>
-        {showLetter && (
+             {showLetter && (
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.8)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ background: '#fdfbf7', color: '#333', padding: '3rem', borderRadius: '8px', maxWidth: '500px', width: '90%', position: 'relative', maxHeight: '80vh', overflowY: 'auto' }}>
               <button onClick={() => setShowLetter(false)} style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'transparent', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#666' }}>&times;</button>
@@ -517,8 +515,70 @@ const FinalSurprise = () => {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
 
+        {showCollage && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.95)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            
+            {/* Confetti Emojis */}
+            {Array.from({ length: 60 }).map((_, i) => (
+              <motion.div
+                key={`confetti-${i}`}
+                initial={{ opacity: 1, x: '50vw', y: '100vh', scale: 0 }}
+                animate={{ 
+                  x: `${Math.random() * 100}vw`, 
+                  y: `${Math.random() * -30 - 10}vh`, 
+                  scale: Math.random() * 1.5 + 0.5,
+                  rotate: Math.random() * 360
+                }}
+                transition={{ duration: 3 + Math.random() * 2, ease: "easeOut" }}
+                style={{ position: 'absolute', fontSize: '2rem', zIndex: 201 }}
+              >
+                {['🎉', '💖', '✨', '🎂', '🎈'][Math.floor(Math.random() * 5)]}
+              </motion.div>
+            ))}
+
+            {/* Exploding Photo Collage */}
+            {Array.from({ length: 16 }).map((_, i) => {
+               const imgIdx = Math.floor(Math.random() * 40) + 1;
+               const angle = (i / 16) * Math.PI * 2;
+               const radius = 25 + Math.random() * 20;
+               return (
+                 <motion.div
+                   key={`collage-${i}`}
+                   initial={{ opacity: 0, scale: 0, x: 0, y: 0, rotate: 0 }}
+                   animate={{ 
+                     opacity: 1, 
+                     scale: 1, 
+                     x: `${Math.cos(angle) * radius}vw`, 
+                     y: `${Math.sin(angle) * radius}vh`,
+                     rotate: Math.random() * 40 - 20
+                   }}
+                   transition={{ duration: 1.5, delay: i * 0.1, type: "spring", bounce: 0.4 }}
+                   style={{
+                     position: 'absolute', width: '150px', height: '200px', 
+                     background: `url(${getImg(imgIdx)})`, backgroundSize: 'cover', backgroundPosition: 'center',
+                     border: '4px solid white', borderRadius: '8px',
+                     boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 202
+                   }}
+                 />
+               )
+            })}
+
+            {/* Final Text Overlay */}
+            <motion.div 
+               initial={{ opacity: 0, scale: 0 }}
+               animate={{ opacity: 1, scale: 1 }}
+               transition={{ delay: 2.5, duration: 2, type: "spring", bounce: 0.5 }}
+               style={{ zIndex: 205, background: 'rgba(20,20,20,0.85)', padding: '3rem', borderRadius: '16px', border: '2px solid var(--accent-gold)', textAlign: 'center', boxShadow: '0 0 50px rgba(230,211,168,0.3)' }}
+            >
+               <h1 className="serif" style={{ fontSize: '3rem', color: 'var(--accent-gold)', marginBottom: '1rem' }}>HAPPY BIRTHDAY</h1>
+               <h2 className="serif" style={{ fontSize: '2.2rem', color: 'white' }}>MY DEAR LUTTU! ❤️</h2>
+               <p style={{ marginTop: '2rem', fontSize: '1.2rem', color: 'var(--text-muted)' }}>Now come find me for your real gift...</p>
+               <button className="cinematic-btn" style={{ marginTop: '3rem' }} onClick={() => setShowCollage(false)}>Close</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };
