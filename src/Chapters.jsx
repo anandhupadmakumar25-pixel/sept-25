@@ -73,21 +73,21 @@ const Chapter1 = ({ onNext }) => {
     <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ position: 'relative', width: '300px', height: '300px', marginBottom: '3rem' }}>
         <motion.div 
-          animate={{ x: step >= 3 ? 100 : 0, scale: step >= 3 ? 1.2 : 1 }}
+          animate={{ x: step >= 3 ? 80 : 0, scale: step >= 3 ? 1.2 : 1 }}
           transition={{ duration: 4, ease: "easeInOut" }}
-          style={{ position: 'absolute', left: '20%', top: '40%', width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.8)', boxShadow: '0 0 40px rgba(255,255,255,0.5)' }} 
+          style={{ position: 'absolute', left: '15%', top: '35%', width: '70px', height: '70px', borderRadius: '50%', background: `url(${getImg(12)})`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 0 40px rgba(255,255,255,0.5)', border: '2px solid rgba(255,255,255,0.8)' }} 
         />
         <motion.div 
-          animate={{ x: step >= 3 ? -100 : 0, scale: step >= 3 ? 1.2 : 1 }}
+          animate={{ x: step >= 3 ? -80 : 0, scale: step >= 3 ? 1.2 : 1 }}
           transition={{ duration: 4, ease: "easeInOut" }}
-          style={{ position: 'absolute', right: '20%', top: '40%', width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(230, 211, 168, 0.8)', boxShadow: '0 0 40px rgba(230, 211, 168, 0.5)' }} 
+          style={{ position: 'absolute', right: '15%', top: '35%', width: '70px', height: '70px', borderRadius: '50%', background: `url(${getImg(24)})`, backgroundSize: 'cover', backgroundPosition: 'center', boxShadow: '0 0 40px rgba(230, 211, 168, 0.5)', border: '2px solid rgba(230,211,168,0.8)' }} 
         />
         {step >= 3 && (
           <motion.div 
             initial={{ opacity: 0, width: 0 }}
             animate={{ opacity: 1, width: '100px' }}
             transition={{ duration: 2, ease: "easeInOut" }}
-            style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', height: '2px', background: 'linear-gradient(90deg, rgba(255,255,255,0.8), rgba(230,211,168,0.8))', boxShadow: '0 0 20px rgba(230,211,168,0.8)' }}
+            style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', height: '2px', background: 'linear-gradient(90deg, rgba(255,255,255,0.8), rgba(230,211,168,0.8))', boxShadow: '0 0 20px rgba(230,211,168,0.8)', zIndex: -1 }}
           />
         )}
       </div>
