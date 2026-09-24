@@ -270,10 +270,10 @@ const Chapter5 = ({ onNext }) => {
   const events = [
     { title: "THE BEGINNING", img: `${import.meta.env.BASE_URL}assets/IMG-20260924-WA0049.jpg` },
     { title: "THE MOMENTS", img: `${import.meta.env.BASE_URL}assets/IMG-20260924-WA0043.jpg` },
-    { title: "THE LAUGHTER", img: getImg(33) },
-    { title: "THE CRAZY DAYS", img: getImg(34) },
-    { title: "THE QUIET MOMENTS", img: getImg(35) },
-    { title: "US", img: getImg(36) }
+    { title: "THE LAUGHTER", img: `${import.meta.env.BASE_URL}assets/WhatsApp Image 2026-09-24 at 21.30.09.jpeg` },
+    { title: "THE CRAZY DAYS", img: `${import.meta.env.BASE_URL}assets/IMG-20260924-WA0046.jpg` },
+    { title: "THE QUIET MOMENTS", img: `${import.meta.env.BASE_URL}assets/WhatsApp Image 2026-09-24 at 21.30.02.jpeg` },
+    { title: "US", img: `${import.meta.env.BASE_URL}assets/IMG-20260924-WA0051.jpg` }
   ];
 
   return (
