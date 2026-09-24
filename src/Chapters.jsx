@@ -418,15 +418,30 @@ const FinalSurprise = () => {
 };
 
 export default function Chapters({ currentChapter, nextChapter }) {
-  switch (currentChapter) {
-    case 0: return <Opening onNext={nextChapter} />;
-    case 1: return <Chapter1 onNext={nextChapter} />;
-    case 2: return <Chapter2 onNext={nextChapter} />;
-    case 3: return <Chapter3 onNext={nextChapter} />;
-    case 4: return <Chapter4 onNext={nextChapter} />;
-    case 5: return <Chapter5 onNext={nextChapter} />;
-    case 6: return <Chapter6 onNext={nextChapter} />;
-    case 7: return <FinalSurprise />;
-    default: return null;
-  }
+  const renderChapter = () => {
+    switch (currentChapter) {
+      case 0: return <Opening onNext={nextChapter} />;
+      case 1: return <Chapter1 onNext={nextChapter} />;
+      case 2: return <Chapter2 onNext={nextChapter} />;
+      case 3: return <Chapter3 onNext={nextChapter} />;
+      case 4: return <Chapter4 onNext={nextChapter} />;
+      case 5: return <Chapter5 onNext={nextChapter} />;
+      case 6: return <Chapter6 onNext={nextChapter} />;
+      case 7: return <FinalSurprise />;
+      default: return null;
+    }
+  };
+
+  return (
+    <>
+      {/* Aggressively preload all images immediately on load */}
+      <div style={{ display: 'none' }}>
+        {allImages.map((img, idx) => (
+          <link rel="preload" as="image" key={idx} href={`${import.meta.env.BASE_URL}assets/${img}`} />
+        ))}
+        <link rel="preload" as="image" href={`${import.meta.env.BASE_URL}assets/first-memory.jpg`} />
+      </div>
+      {renderChapter()}
+    </>
+  );
 }
