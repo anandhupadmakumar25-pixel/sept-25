@@ -173,14 +173,17 @@ const Chapter3 = ({ onNext }) => {
       {memories.map((m) => (
         <motion.div
           key={m.id}
-          whileHover={{ scale: 1.5 }}
+          whileHover={{ scale: 2, zIndex: 100 }}
           onClick={() => openMemory(m)}
           style={{
             position: 'absolute', left: `${m.x}%`, top: `${m.y}%`,
-            width: m.secret ? '8px' : '5px', height: m.secret ? '8px' : '5px',
-            background: m.secret ? 'var(--accent-gold)' : 'white',
+            width: '35px', height: '35px',
+            background: `url(${m.img})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
             borderRadius: '50%', cursor: 'pointer',
-            boxShadow: m.secret ? '0 0 15px var(--accent-gold)' : '0 0 8px white',
+            boxShadow: m.secret ? '0 0 20px var(--accent-gold)' : '0 0 10px rgba(255,255,255,0.3)',
+            border: m.secret ? '2px solid var(--accent-gold)' : '1px solid rgba(255,255,255,0.6)',
             zIndex: 10
           }}
         />
