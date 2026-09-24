@@ -20,7 +20,7 @@ const allImages = [
   "WhatsApp Image 2026-09-24 at 21.30.12.jpeg", "file_00000000da688211af73dbc9e3cfbcab.png"
 ].sort(() => 0.5 - Math.random()); // Shuffled once on load
 
-const getImg = (idx) => `/assets/${allImages[idx % allImages.length]}`;
+const getImg = (idx) => `${import.meta.env.BASE_URL}assets/${allImages[idx % allImages.length]}`;
 
 const pageVariants = {
   initial: { opacity: 0, scale: 0.95, filter: 'blur(10px)' },
@@ -117,7 +117,7 @@ const Chapter2 = ({ onNext }) => (
       transition={{ duration: 3 }}
       style={{ width: '80%', maxWidth: '600px', height: '400px', background: 'rgba(255,255,255,0.05)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', marginBottom: '3rem', border: '1px solid rgba(255,255,255,0.1)' }}
     >
-      <img src="/assets/first-memory.jpg" alt="First memory" style={{ width: '100%', height: '100%', objectFit: 'contain' }} onError={(e) => { e.target.src = getImg(0); }} />
+      <img src={`${import.meta.env.BASE_URL}assets/first-memory.jpg`} alt="First memory" style={{ width: '100%', height: '100%', objectFit: 'contain' }} onError={(e) => { e.target.src = getImg(0); }} />
     </motion.div>
     
     <motion.h2 custom={1.5} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
