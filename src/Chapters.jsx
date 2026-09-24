@@ -342,7 +342,7 @@ const FinalSurprise = () => {
   }, []);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 3 }} style={{ height: '100%', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle at center, rgba(230,211,168,0.15) 0%, transparent 60%)' }}>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 3 }} style={{ height: '100%', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '5vh', paddingBottom: '10vh', background: 'radial-gradient(circle at center, rgba(230,211,168,0.15) 0%, transparent 60%)', overflowY: 'auto' }}>
 
       {/* Huge Glowing Moon */}
       <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 0.3, scale: 1 }} transition={{ duration: 5 }} style={{ position: 'absolute', top: '10%', width: '40vh', height: '40vh', borderRadius: '50%', background: 'var(--accent-gold)', filter: 'blur(80px)', zIndex: 0 }} />
@@ -402,7 +402,7 @@ const FinalSurprise = () => {
       <AnimatePresence>
         {showLetter && (
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.8)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ background: '#fdfbf7', color: '#333', padding: '3rem', borderRadius: '8px', maxWidth: '500px', width: '90%', position: 'relative' }}>
+            <div style={{ background: '#fdfbf7', color: '#333', padding: '3rem', borderRadius: '8px', maxWidth: '500px', width: '90%', position: 'relative', maxHeight: '80vh', overflowY: 'auto' }}>
               <button onClick={() => setShowLetter(false)} style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'transparent', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#666' }}>&times;</button>
               <h2 className="serif" style={{ fontSize: '2rem', marginBottom: '2rem', color: '#111' }}>My Dearest,</h2>
               <p className="serif" style={{ fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '1rem' }}>
