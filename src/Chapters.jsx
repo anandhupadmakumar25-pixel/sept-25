@@ -41,19 +41,72 @@ const Opening = ({ onNext }) => (
   <motion.div
     className="chapter-container"
     initial="initial" animate="in" exit="out" variants={pageVariants}
-    style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
+    style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}
   >
-    <motion.h2 custom={1} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '2rem', marginBottom: '2rem', fontWeight: 300 }}>
-      Before you enter... 🌙
-    </motion.h2>
-    <motion.h2 custom={3} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '2.5rem', marginBottom: '4rem', color: 'var(--accent-gold)' }}>
-      I made a little universe just for you. ✨
-    </motion.h2>
-    <motion.button
-      custom={5} initial="hidden" animate="visible" variants={textVariants}
-      className="cinematic-btn" onClick={onNext}
+    {/* Decorative rotating celestial rings */}
+    <motion.div 
+      animate={{ rotate: 360 }}
+      transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      style={{
+        position: 'absolute', width: '70vw', height: '70vw', maxWidth: '600px', maxHeight: '600px',
+        borderRadius: '50%', border: '1px solid rgba(230, 211, 168, 0.1)',
+        borderTopColor: 'rgba(230, 211, 168, 0.3)',
+        borderBottomColor: 'rgba(230, 211, 168, 0.3)'
+      }}
+    />
+    <motion.div 
+      animate={{ rotate: -360 }}
+      transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+      style={{
+        position: 'absolute', width: '85vw', height: '85vw', maxWidth: '750px', maxHeight: '750px',
+        borderRadius: '50%', border: '1px dashed rgba(255, 255, 255, 0.05)',
+      }}
+    />
+
+    {/* Subtle glow behind text */}
+    <motion.div 
+      initial={{ opacity: 0 }} animate={{ opacity: 0.15 }} transition={{ duration: 4 }}
+      style={{ position: 'absolute', width: '300px', height: '300px', background: 'var(--accent-gold)', filter: 'blur(100px)', borderRadius: '50%' }}
+    />
+
+    <motion.p 
+      custom={1} initial="hidden" animate="visible" variants={textVariants} 
+      style={{ fontSize: '0.8rem', letterSpacing: '8px', marginBottom: '1.5rem', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', zIndex: 10 }}
     >
-      Enter My World ✨
+      Before you enter... 🌙
+    </motion.p>
+    
+    <motion.h1 
+      initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }} 
+      animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }} 
+      transition={{ duration: 3, delay: 1.5, ease: 'easeOut' }}
+      className="serif" 
+      style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--accent-gold)', textAlign: 'center', lineHeight: 1.2, textShadow: '0 0 40px rgba(230,211,168,0.4)', zIndex: 10, padding: '0 20px' }}
+    >
+      I made a little<br/>universe just for you. ✨
+    </motion.h1>
+
+    <motion.div 
+      initial={{ height: 0 }} animate={{ height: '60px' }} transition={{ duration: 2, delay: 3 }}
+      style={{ width: '1px', background: 'linear-gradient(to bottom, var(--accent-gold), transparent)', margin: '2rem 0', zIndex: 10 }} 
+    />
+
+    <motion.button
+      initial={{ opacity: 0, scale: 0.9 }} 
+      animate={{ opacity: 1, scale: 1 }} 
+      transition={{ delay: 4.5, duration: 2 }}
+      whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(230, 211, 168, 0.5)", textShadow: "0 0 10px rgba(255,255,255,0.8)" }}
+      whileTap={{ scale: 0.95 }}
+      className="cinematic-btn" 
+      onClick={onNext}
+      style={{ zIndex: 10, padding: '12px 30px', letterSpacing: '4px' }}
+    >
+      <motion.span
+        animate={{ opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
+        Enter My World
+      </motion.span>
     </motion.button>
   </motion.div>
 );
