@@ -267,7 +267,15 @@ const Chapter4 = ({ onNext }) => {
 
 const Chapter5 = ({ onNext }) => {
   // Timeline chapter
-  const events = ["THE BEGINNING", "THE MOMENTS", "THE LAUGHTER", "THE CRAZY DAYS", "THE QUIET MOMENTS", "US"];
+  const events = [
+    { title: "THE BEGINNING", img: `${import.meta.env.BASE_URL}assets/IMG-20260924-WA0049.jpg` },
+    { title: "THE MOMENTS", img: `${import.meta.env.BASE_URL}assets/IMG-20260924-WA0043.jpg` },
+    { title: "THE LAUGHTER", img: getImg(33) },
+    { title: "THE CRAZY DAYS", img: getImg(34) },
+    { title: "THE QUIET MOMENTS", img: getImg(35) },
+    { title: "US", img: getImg(36) }
+  ];
+
   return (
     <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', paddingTop: '10%', overflowY: 'auto' }}>
       <h2 className="serif" style={{fontSize: '2rem', marginBottom: '4rem', color: 'var(--accent-gold)'}}>Our Timeline</h2>
@@ -275,9 +283,9 @@ const Chapter5 = ({ onNext }) => {
         {events.map((ev, i) => (
           <motion.div key={i} initial={{opacity:0, y:50}} whileInView={{opacity:1, y:0}} viewport={{once:true, margin: "-100px"}} transition={{duration: 1.5}} style={{textAlign: 'center'}}>
             <div style={{width: '250px', height: '150px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)', display:'flex', alignItems:'center', justifyContent:'center', overflow: 'hidden'}}>
-              <img src={getImg(i + 31)} alt={ev} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src={ev.img} alt={ev.title} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
-            <h3 style={{letterSpacing: '3px', fontSize: '0.9rem', color: 'var(--text-muted)'}}>{ev}</h3>
+            <h3 style={{letterSpacing: '3px', fontSize: '0.9rem', color: 'var(--text-muted)'}}>{ev.title}</h3>
             {i < events.length - 1 && <div style={{width: '1px', height: '50px', background: 'linear-gradient(to bottom, var(--accent-gold), transparent)', margin: '2rem auto 0'}} />}
           </motion.div>
         ))}
