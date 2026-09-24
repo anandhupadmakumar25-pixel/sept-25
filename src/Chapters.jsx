@@ -151,13 +151,17 @@ const Chapter3 = ({ onNext }) => {
     }));
     generated[15].text = "You found one.\n\nBut there are still a few things I haven't told you...";
     setMemories(generated);
+
+    // Auto-reveal the Next button after 8 seconds so the user isn't stuck
+    const t = setTimeout(() => setFoundSecret(true), 8000);
+    return () => clearTimeout(t);
   }, []);
 
   const openMemory = (m) => {
     if (!activeMemories.find(active => active.id === m.id)) {
       setActiveMemories([...activeMemories, m]);
     }
-    if (m.secret) setFoundSecret(true);
+    setFoundSecret(true); // Always reveal next button on any click
   };
 
   const closeMemory = (e, id) => {
