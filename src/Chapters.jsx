@@ -457,14 +457,63 @@ const FinalSurprise = () => {
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.8)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ background: '#fdfbf7', color: '#333', padding: '3rem', borderRadius: '8px', maxWidth: '500px', width: '90%', position: 'relative', maxHeight: '80vh', overflowY: 'auto' }}>
               <button onClick={() => setShowLetter(false)} style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'transparent', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#666' }}>&times;</button>
-              <h2 className="serif" style={{ fontSize: '2rem', marginBottom: '2rem', color: '#111' }}>My Dearest,</h2>
-              <p className="serif" style={{ fontSize: '1.2rem', lineHeight: 1.8, marginBottom: '1rem' }}>
-                [ Your deeply personal and romantic love letter goes here. Speak from the heart. ]
-              </p>
-              <p className="serif" style={{ fontSize: '1.2rem', lineHeight: 1.8, textAlign: 'right', marginTop: '2rem' }}>
-                Forever yours,<br />
-                [ Your Name ]
-              </p>
+              <div className="serif" style={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#333', textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <p><strong>My Luttu, ❤️</strong></p>
+                <p>Sometimes I think about how our story even started… and honestly, it still feels a little unbelievable.</p>
+                <p>The first time I saw you, it was just your WhatsApp DP.</p>
+                <p>You were a designer.<br/>I was a developer.<br/>Two completely different people who didn't even know each other.</p>
+                <p>At that time, I never imagined that the girl in that little WhatsApp picture would someday become the most important person in my life.</p>
+                <p>Then came that New Year.</p>
+                <p>Somehow, we connected.<br/>One message became another.<br/>Those messages slowly became conversations.<br/>The conversations became friendship.<br/>And without either of us realizing exactly when it happened…</p>
+                <p><strong>that friendship became love. ❤️</strong></p>
+                <p>And then came the moment I proposed to you.</p>
+                <p>From that day until today, we've created so many memories together. Some big, some small, and some that may look completely ordinary to everyone else — but to me, they are everything.</p>
+                <p>Every time we meet, sit together, talk, laugh, or simply enjoy being beside each other, I feel lucky.</p>
+                <p>I can spend hours with you and still feel like I need more time.</p>
+                <p>Sometimes I feel like I could see you for 24 hours and still not get bored.</p>
+                <p>Because it's not really about what we're doing.</p>
+                <p><strong>It's about being with you.</strong></p>
+                <p>You've become such a huge part of my life that I honestly can't imagine my days without you.</p>
+                <p>You love me like I'm your own person.</p>
+                <p>You care about me.<br/>You notice the little things.<br/>You worry about me.<br/>You make me feel loved in ways I can't always explain.</p>
+                <p>And I hope you know that I feel the same way about you.</p>
+                <p>I'm 30, and today you're turning 25.</p>
+                <p>Five years between us, two different people, two different worlds…</p>
+                <p><strong>but somehow, we found each other.</strong></p>
+                <p>And now I don't just think about my life.</p>
+                <p>I think about <strong>our life.</strong></p>
+                <p>We've already made so many memories, but my favourite thing is knowing that our story isn't finished.</p>
+                <p>There are still so many places we'll go.<br/>So many days we'll spend together.<br/>So many silly fights we'll have.<br/>So many things we'll laugh about.<br/>So many difficult moments we'll overcome.<br/>And so many beautiful memories waiting for us.</p>
+                <p>And one day, when we look back at everything, I think we'll laugh about how our whole story started…</p>
+                <p><strong>with a WhatsApp DP.</strong></p>
+                <p>You were once just a girl I happened to see.</p>
+                <p>Then you became my friend.</p>
+                <p>Then my love.</p>
+                <p>And now…</p>
+                <p><strong>you're my Luttu. ❤️</strong></p>
+                <p>The person I look for.<br/>The person I want beside me.<br/>The person I want to tell everything to.<br/>The person who makes ordinary days feel special.</p>
+                <p>I don't want a life where you're not there.</p>
+                <p>And I never want you to feel that you have to face life alone.</p>
+                <p>Because wherever life takes us, I want <strong>Ettan</strong> to be there for <strong>Luttu</strong>.</p>
+                <p>Not just on the happy days.</p>
+                <p>On the difficult days too.</p>
+                <p>When you're tired, I'll be there.</p>
+                <p>When you're upset, I'll be there.</p>
+                <p>When you're happy, I'll be the one celebrating with you.</p>
+                <p>And when life gets difficult, we'll figure it out together.</p>
+                <p>We've already come so far.</p>
+                <p>From strangers…<br/>to messages…<br/>to friendship…<br/>to love…<br/>to becoming each other's person.</p>
+                <p><strong>Two different worlds.<br/>One unexpected connection.<br/>Countless conversations.<br/>Thousands of memories.<br/>One love.</strong></p>
+                <p>And if I had the chance to go back to the very beginning and live it all again…</p>
+                <p>I would still choose that first message.</p>
+                <p>I would still choose that friendship.</p>
+                <p>I would still choose you.</p>
+                <p><strong>Every single time. ❤️</strong></p>
+                <p>Happy 25th Birthday, my Luttu. 🎂❤️</p>
+                <p>You are not just someone I love.</p>
+                <p><strong>You are the person I want beside me for all the chapters that are still waiting to be written.</strong></p>
+                <p style={{ textAlign: 'right', marginTop: '2rem', fontSize: '1.2rem' }}>Always your <strong>Ettan</strong>. ❤️</p>
+              </div>
             </div>
           </motion.div>
         )}
