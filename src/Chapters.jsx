@@ -44,16 +44,16 @@ const Opening = ({ onNext }) => (
     style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
   >
     <motion.h2 custom={1} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '2rem', marginBottom: '2rem', fontWeight: 300 }}>
-      Before you enter...
+      Happy Birthday, My Everything 🎂✨
     </motion.h2>
     <motion.h2 custom={3} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '2.5rem', marginBottom: '4rem', color: 'var(--accent-gold)' }}>
-      I made a little universe for you.
+      For the girl who makes my world complete. 💖
     </motion.h2>
     <motion.button 
       custom={5} initial="hidden" animate="visible" variants={textVariants}
       className="cinematic-btn" onClick={onNext}
     >
-      Enter My World ✨
+      Begin Our Journey 🌟
     </motion.button>
   </motion.div>
 );
@@ -94,9 +94,9 @@ const Chapter1 = ({ onNext }) => {
       
       <div style={{ height: '100px', textAlign: 'center' }}>
         <AnimatePresence mode="wait">
-          {step === 1 && <motion.h2 key="1" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:2}} className="serif" style={{fontSize: '2rem'}}>Once upon a time...</motion.h2>}
-          {step === 2 && <motion.h2 key="2" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:2}} className="serif" style={{fontSize: '2rem'}}>There were two completely different worlds.</motion.h2>}
-          {step >= 3 && <motion.h2 key="3" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:2}} className="serif" style={{fontSize: '2.5rem', color: 'var(--accent-gold)'}}>And somehow... they found each other.</motion.h2>}
+          {step === 1 && <motion.h2 key="1" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:2}} className="serif" style={{fontSize: '2rem'}}>Before I met you, my world was just drifting... 🌍</motion.h2>}
+          {step === 2 && <motion.h2 key="2" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:2}} className="serif" style={{fontSize: '2rem'}}>Then you walked into my life... ✨</motion.h2>}
+          {step >= 3 && <motion.h2 key="3" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:2}} className="serif" style={{fontSize: '2.5rem', color: 'var(--accent-gold)'}}>Two worlds, intertwined forever. ❤️</motion.h2>}
         </AnimatePresence>
       </div>
 
@@ -120,11 +120,11 @@ const Chapter2 = ({ onNext }) => (
       <img src={`${import.meta.env.BASE_URL}assets/first-memory.jpg`} alt="First memory" style={{ width: '100%', height: '100%', objectFit: 'contain' }} onError={(e) => { e.target.src = getImg(0); }} />
     </motion.div>
     
-    <motion.h2 custom={1.5} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-      And then you happened.
+    <motion.h2 custom={1.5} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: 'var(--accent-gold)' }}>
+      HAPPY BIRTHDAY MY LUTTUSE ❤️
     </motion.h2>
-    <motion.h3 custom={3} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '1.5rem', color: 'var(--accent-gold)' }}>
-      My ordinary world suddenly became a little more beautiful.
+    <motion.h3 custom={3} initial="hidden" animate="visible" variants={textVariants} className="serif" style={{ fontSize: '1.5rem', color: 'var(--text-main)' }}>
+      The spark that started our beautiful journey. ✨
     </motion.h3>
 
     <motion.button custom={4.5} initial="hidden" animate="visible" variants={textVariants} className="cinematic-btn" onClick={onNext} style={{marginTop: '3rem'}}>
