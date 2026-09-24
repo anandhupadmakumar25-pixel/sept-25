@@ -451,7 +451,9 @@ const FinalSurprise = () => {
             </div>
           </motion.div>
         )}
-             {showLetter && (
+      </div>
+      <AnimatePresence>
+        {showLetter && (
           <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 50 }} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.8)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ background: '#fdfbf7', color: '#333', padding: '3rem', borderRadius: '8px', maxWidth: '500px', width: '90%', position: 'relative', maxHeight: '80vh', overflowY: 'auto' }}>
               <button onClick={() => setShowLetter(false)} style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'transparent', border: 'none', fontSize: '1.5rem', cursor: 'pointer', color: '#666' }}>&times;</button>
