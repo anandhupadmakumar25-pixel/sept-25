@@ -235,7 +235,7 @@ const Chapter3 = ({ onNext }) => {
           style={{
             position: 'absolute', left: `${m.x}%`, top: `${m.y}%`,
             width: '35px', height: '35px',
-            background: `url(${m.img})`,
+            background: `url("${m.img}")`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             borderRadius: '50%', cursor: 'pointer',
@@ -558,7 +558,7 @@ const FinalSurprise = () => {
                    transition={{ duration: 1.5, delay: i * 0.1, type: "spring", bounce: 0.4 }}
                    style={{
                      position: 'absolute', width: '150px', height: '200px', 
-                     background: `url(${getImg(imgIdx)})`, backgroundSize: 'cover', backgroundPosition: 'center',
+                     background: `url("${getImg(imgIdx)}")`, backgroundSize: 'cover', backgroundPosition: 'center',
                      border: '4px solid white', borderRadius: '8px',
                      boxShadow: '0 10px 30px rgba(0,0,0,0.5)', zIndex: 202
                    }}
